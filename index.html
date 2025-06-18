@@ -2,37 +2,23 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Panchetos Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro Firebase</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main>
-    <h1>🌭 Panchetos Club</h1>
-    <div id="promo">Cargando promociones...</div>
 
-    <div id="auth">
-      <input type="email" placeholder="Email" id="email" />
-      <input type="password" placeholder="Contraseña" id="password" />
-      <button onclick="login()">Iniciar sesión</button>
-      <button onclick="googleLogin()">Iniciar con Google</button>
-    </div>
-
-    <div id="userInfo" style="display:none;">
-      <p id="username"></p>
-      <p>Puntos: <span id="puntos">0</span></p>
-      <button onclick="sumarPunto()">Sumar punto</button>
-      <button onclick="logout()">Cerrar sesión</button>
-    </div>
-  </main>
-
-  <!-- Firebase SDKs -->
+  <!-- Firebase SDKs clásicos -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
 
-  <!-- Tu lógica -->
-  <script src="firebase.js"></script>
-  <script src="app.js"></script>
+  <!-- Tu JS debe cargarse después de Firebase -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <h1>Registro de usuario</h1>
+  <div class="form-container">
+    <input id="email" type="email" placeholder="Ingresar email" />
+    <input id="contrasena" type="password" placeholder="Ingresar contraseña" />
+    <button onclick="registrar()">Enviar</button>
+  </div>
 </body>
 </html>
